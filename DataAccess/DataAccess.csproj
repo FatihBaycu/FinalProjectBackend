@@ -2,14 +2,15 @@
 
 	<PropertyGroup>
 		<TargetFramework>netstandard2.0</TargetFramework>
+		<UserSecretsId>2ad8758b-120e-4837-96da-e5322cb7e19c</UserSecretsId>
 	</PropertyGroup>
 
 	<ItemGroup>
-	  <ProjectReference Include="..\Entities\Entities.csproj" />
+	  <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="3.1.11" />
 	</ItemGroup>
 
 	<ItemGroup>
-	  <Folder Include="Concrete\EntityFramework\" />
+	  <ProjectReference Include="..\Entities\Entities.csproj" />
 	</ItemGroup>
 
 </Project>
