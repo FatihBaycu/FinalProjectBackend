@@ -16,6 +16,11 @@ namespace DataAccess.Concrete.EntityFramework
 
         }
 
+        public Category Get(Expression<Func<Category, bool>> filter)
+        {
+            throw new NotImplementedException();
+        }
+
         public Category Get()
         {
             throw new NotImplementedException();

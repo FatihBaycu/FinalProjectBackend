@@ -16,11 +16,11 @@ namespace DataAccess.Concrete.InMemory
         {
             _products = new List<Product>
            {
-               new Product{CategoryId = 1,ProductId =1,ProductName = "Bardak", UnitInStok = 15, UnitPrice = 15},
-               new Product{CategoryId = 1,ProductId =2,ProductName = "Kamera", UnitInStok = 3, UnitPrice = 500},
-               new Product{CategoryId = 2,ProductId =3,ProductName = "Telefon", UnitInStok = 2, UnitPrice = 1500},
-               new Product{CategoryId = 2,ProductId =4,ProductName = "Klavye", UnitInStok = 65, UnitPrice = 150},
-               new Product{CategoryId = 2,ProductId =5,ProductName = "Fare", UnitInStok = 1, UnitPrice = 85}
+               new Product{CategoryId = 1,ProductId =1,ProductName = "Bardak", UnitsInStock = 15, UnitPrice = 15},
+               new Product{CategoryId = 1,ProductId =2,ProductName = "Kamera", UnitsInStock = 3, UnitPrice = 500},
+               new Product{CategoryId = 2,ProductId =3,ProductName = "Telefon", UnitsInStock = 2, UnitPrice = 1500},
+               new Product{CategoryId = 2,ProductId =4,ProductName = "Klavye", UnitsInStock = 65, UnitPrice = 150},
+               new Product{CategoryId = 2,ProductId =5,ProductName = "Fare", UnitsInStock = 1, UnitPrice = 85}
            };
         }
 
@@ -34,6 +34,11 @@ namespace DataAccess.Concrete.InMemory
         {
             
             
+            throw new NotImplementedException();
+        }
+
+        public Product Get(Expression<Func<Product, bool>> filter)
+        {
             throw new NotImplementedException();
         }
 
@@ -53,7 +58,7 @@ namespace DataAccess.Concrete.InMemory
             productToUpdate.ProductName=product.ProductName;
             productToUpdate.CategoryId=product.CategoryId;
             productToUpdate.ProductId=product.ProductId;
-            productToUpdate.UnitInStok=product.UnitInStok;
+            productToUpdate.UnitsInStock = product.UnitsInStock;
             productToUpdate.UnitPrice=product.UnitPrice;
         }
 
