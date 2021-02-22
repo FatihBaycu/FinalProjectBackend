@@ -2,12 +2,12 @@
 using System.Collections.Generic;
 using System.Linq.Expressions;
 using System.Text;
-using Entities.Abstract;
+using Core.Entities;
 
-namespace DataAccess.Abstract
+namespace Core.DataAccess
 {
     // class: referans tip
-   public  interface IEntityRepository<T> where T:class,IEntity
+   public  interface IEntityRepository<T> where T:class
    { 
       
         List<T> GetAll(Expression<Func<T,bool>> filter=null);
@@ -16,6 +16,5 @@ namespace DataAccess.Abstract
         void Update(T entity);
         void Delete(T entity);
         List<T> GetAllByCategory(int categoryId);
-
-    }
+   }
 }

@@ -3,13 +3,15 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30907.101
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataAccess", "DataAccess\DataAccess.csproj", "{F2677FCA-2E7C-442A-8625-6F8A164ACE3A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DataAccess", "DataAccess\DataAccess.csproj", "{F2677FCA-2E7C-442A-8625-6F8A164ACE3A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Business", "Business\Business.csproj", "{06BCED30-2C41-465A-BDF9-08F7F0B20B62}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Business", "Business\Business.csproj", "{06BCED30-2C41-465A-BDF9-08F7F0B20B62}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Entities", "Entities\Entities.csproj", "{0FA92D48-3327-4511-B50A-AD2455EA8AFE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Entities", "Entities\Entities.csproj", "{0FA92D48-3327-4511-B50A-AD2455EA8AFE}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleUI", "ConsoleUI\ConsoleUI.csproj", "{EE1514D8-5984-4896-9F4D-4619FB23A933}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Core", "Core\Core.csproj", "{97A8974E-6396-4568-B6E5-2842DD7C55F7}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +35,10 @@ Global
 		{EE1514D8-5984-4896-9F4D-4619FB23A933}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EE1514D8-5984-4896-9F4D-4619FB23A933}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EE1514D8-5984-4896-9F4D-4619FB23A933}.Release|Any CPU.Build.0 = Release|Any CPU
+		{97A8974E-6396-4568-B6E5-2842DD7C55F7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{97A8974E-6396-4568-B6E5-2842DD7C55F7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{97A8974E-6396-4568-B6E5-2842DD7C55F7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{97A8974E-6396-4568-B6E5-2842DD7C55F7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
