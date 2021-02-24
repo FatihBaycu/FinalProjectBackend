@@ -22,7 +22,6 @@ namespace ConsoleUI
             
             Console.ReadKey();
         }
-
         private static void CategoryTest()
         {
             CategoryManager categoryManager = new CategoryManager(new EfCategoryDal());
@@ -35,6 +34,7 @@ namespace ConsoleUI
         private static void ProductTest()
         {
             ProductManager productManager = new ProductManager(new EfProductDal());
+           
             foreach (var item in productManager.getProductDetail())
             {
                 Console.WriteLine("Ürün Id: "+item.ProductId + "\nÜrün Stoğu: " + item.UnitsInStock+ "\nÜrün Kategorisi: " + item.CategoryName+ "\nÜrün Adı: " + item.ProductName+ "\n----------------------------------------------------");
