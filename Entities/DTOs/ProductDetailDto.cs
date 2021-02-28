@@ -1,12 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using Core;
-using Core.Entities;
+﻿using Core.Entities;
 
 namespace Entities.DTOs
 {
-   public class ProductDetailDto:IDto
+    public class ProductDetailDto : IDto
     {
         public int ProductId { get; set; }
         public string ProductName { get; set; }
@@ -14,5 +10,5 @@ namespace Entities.DTOs
         public short UnitsInStock { get; set; }
     }
 
-  
+
 }

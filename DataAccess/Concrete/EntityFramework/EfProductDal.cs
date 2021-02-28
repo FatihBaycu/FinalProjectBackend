@@ -1,13 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Linq.Expressions;
-using System.Text;
-using Core.DataAccess;
+﻿using Core.DataAccess;
 using DataAccess.Abstract;
 using Entities.Concrete;
 using Entities.DTOs;
-using Microsoft.EntityFrameworkCore;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace DataAccess.Concrete.EntityFramework
 {
@@ -15,18 +11,18 @@ namespace DataAccess.Concrete.EntityFramework
     {
         public List<ProductDetailDto> getProductDetail()
         {
-            using (NorthwindContext context=new NorthwindContext())
+            using (NorthwindContext context = new NorthwindContext())
             {
-           
 
 
-                    var result = from p in context.Products 
-                            join  c in context.Categories
-                    on p.CategoryId equals c.CategoryId
-                        select new
-                            ProductDetailDto
-                            { ProductId = p.ProductId, CategoryName = c.CategoryName, ProductName = p.ProductName, UnitsInStock = p.UnitsInStock };
-                    return result.ToList();
+
+                var result = from p in context.Products
+                             join c in context.Categories
+                     on p.CategoryId equals c.CategoryId
+                             select new
+                                 ProductDetailDto
+                             { ProductId = p.ProductId, CategoryName = c.CategoryName, ProductName = p.ProductName, UnitsInStock = p.UnitsInStock };
+                return result.ToList();
             }
         }
     }

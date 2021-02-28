@@ -1,11 +1,10 @@
-﻿using System;
+﻿using DataAccess.Abstract;
+using Entities.Concrete;
+using Entities.DTOs;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Linq.Expressions;
-using System.Text;
-using DataAccess.Abstract;
-using Entities.Concrete;
-using Entities.DTOs;
 
 namespace DataAccess.Concrete.InMemory
 {
@@ -33,8 +32,8 @@ namespace DataAccess.Concrete.InMemory
 
         public List<Product> GetAll(Expression<Func<Product, bool>> filter = null)
         {
-            
-            
+
+
             throw new NotImplementedException();
         }
 
@@ -55,17 +54,17 @@ namespace DataAccess.Concrete.InMemory
 
         public void Update(Product product)
         {
-            Product productToUpdate= _products.SingleOrDefault(p => p.ProductId == product.ProductId);
-            productToUpdate.ProductName=product.ProductName;
-            productToUpdate.CategoryId=product.CategoryId;
-            productToUpdate.ProductId=product.ProductId;
+            Product productToUpdate = _products.SingleOrDefault(p => p.ProductId == product.ProductId);
+            productToUpdate.ProductName = product.ProductName;
+            productToUpdate.CategoryId = product.CategoryId;
+            productToUpdate.ProductId = product.ProductId;
             productToUpdate.UnitsInStock = product.UnitsInStock;
-            productToUpdate.UnitPrice=product.UnitPrice;
+            productToUpdate.UnitPrice = product.UnitPrice;
         }
 
         public void Delete(Product product)
         {
-            Product productToDelete  = _products.SingleOrDefault(p=>p.ProductId==product.ProductId);
+            Product productToDelete = _products.SingleOrDefault(p => p.ProductId == product.ProductId);
             _products.Remove(productToDelete);
 
         }
@@ -73,7 +72,7 @@ namespace DataAccess.Concrete.InMemory
         public List<Product> GetAllByCategory(int categoryId)
         {
             return _products.Where(p => p.CategoryId == categoryId).ToList();
-            
+
         }
 
         public List<ProductDetailDto> getProductDetail()
