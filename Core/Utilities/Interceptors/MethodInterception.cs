@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using Castle.DynamicProxy;
 
-namespace Core.Utilities.Interseptors
+namespace Core.Utilities.Interceptors
 {
     public abstract class MethodInterception : MethodInterceptionBaseAttribute
     {

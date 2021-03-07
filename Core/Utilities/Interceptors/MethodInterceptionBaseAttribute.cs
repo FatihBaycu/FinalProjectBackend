@@ -4,7 +4,7 @@ using System.Reflection;
 using System.Text;
 using Castle.DynamicProxy;
 
-namespace Core.Utilities.Interseptors
+namespace Core.Utilities.Interceptors
 {
     [AttributeUsage(AttributeTargets.Class | AttributeTargets.Method, AllowMultiple = true, Inherited = true)]
     public abstract class MethodInterceptionBaseAttribute : Attribute, IInterceptor

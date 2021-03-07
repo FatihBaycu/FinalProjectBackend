@@ -1,4 +1,5 @@
 ﻿using Business.Abstract;
+using Business.BusinessAspects.Autofac;
 using Entities.Concrete;
 using Microsoft.AspNetCore.Mvc;
 
@@ -13,7 +14,7 @@ namespace WebAPI.Controllers
         {
             _productService = productService;
         }
-
+        [SecuredOperation("product.list,admin")]
         [HttpGet("getall")]
         public IActionResult GetAll()
         {
@@ -43,7 +44,7 @@ namespace WebAPI.Controllers
                 return BadRequest(result.Message);
             }
         }
-
+        [SecuredOperation("product.add,admin")]
         [HttpPost("add")]
         public IActionResult Add(Product product)
         {

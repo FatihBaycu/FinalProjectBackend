@@ -15,6 +15,9 @@ namespace Business.Abstract
         IResult Add(Product product);
         IResult Update(Product product);
 
+        IResult AddTransactionalTest(Product product);
+
+
         // data içerenleri IDataResult<List<Product>> metotIsmi -- diye     örnek:      IDataResult<List<Product>> GetAll();
         //data içermeyen metotları ise IResult metotIsmi(Entity entitiy)    örnek:      IResult Add(Product product);
 

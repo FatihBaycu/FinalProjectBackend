@@ -2,8 +2,9 @@
 using System.Linq;
 using System.Reflection;
 using Castle.DynamicProxy;
+using Core.Utilities.Interceptors;
 
-namespace Core.Utilities.Interseptors
+namespace Core.Utilities.Inceptors
 {
     public class AspectInterceptorSelector : IInterceptorSelector
     {
