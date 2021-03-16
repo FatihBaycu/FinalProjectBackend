@@ -114,9 +114,14 @@ namespace Business.Concrete
             return null;
         }
 
+        public IDataResult<List<Product>> GetByCategory(int categoryId)
+        {
+            return new SuccessDataResult<List<Product>>(_productDal.GetAll(p => p.CategoryId == categoryId));
+        }
+
         //[SecuredOperation("product.add,admin")]
         [CacheAspect]
-        [PerformanceAspect(5)]
+        //[PerformanceAspect(5)]
         public IDataResult<List<Product>> GetAll()
         {
             if (DateTime.Now.Hour == 22)

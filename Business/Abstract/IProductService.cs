@@ -21,5 +21,6 @@ namespace Business.Abstract
         // data içerenleri IDataResult<List<Product>> metotIsmi -- diye     örnek:      IDataResult<List<Product>> GetAll();
         //data içermeyen metotları ise IResult metotIsmi(Entity entitiy)    örnek:      IResult Add(Product product);
 
+        IDataResult<List<Product>> GetByCategory(int categoryId);
     }
 }
