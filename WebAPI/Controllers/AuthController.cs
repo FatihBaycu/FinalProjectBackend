@@ -37,6 +37,7 @@ namespace WebAPI.Controllers
 
             return BadRequest(result.Message);
         }
+        
 
         [HttpPost("register")]
         public ActionResult Register(UserForRegisterDto userForRegisterDto)

@@ -150,6 +150,7 @@ namespace Business.Concrete
         public IDataResult<List<ProductDetailDto>> getProductDetail()
         {
             return new SuccessDataResult<List<ProductDetailDto>>(_productDal.getProductDetail());
+            
         }
 
         //bir kategoride en fazla 10 ürün olabilir.
