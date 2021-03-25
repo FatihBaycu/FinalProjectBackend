@@ -29,23 +29,25 @@ namespace Business.Concrete
             _categoryService = categoryService;
         }
         // claim 
-        [SecuredOperation("product.add,admin")]
+        //[SecuredOperation("product.add,admin")]
         [ValidationAspect(typeof(ProductValidator))]
         [CacheRemoveAspect("IProductService.Get")]
-
         public IResult Add(Product product)
         {
-            //IResult result = BusinessRules.Run(CheckIfProductNameExist(product.ProductName),
-            //     CheckIfProductCountOfCategoryCorrect(product.CategoryId),CheckIfCategoryLimitExceded());
+            IResult result = BusinessRules.Run(CheckIfProductNameExist(product.ProductName),
+                                                        CheckIfProductCountOfCategoryCorrect(product.CategoryId), 
+                                                        CheckIfCategoryLimitExceded());
 
-            IResult result = BusinessRules.Run(CheckIfProductNameExist(product.ProductName));
+            //IResult result = BusinessRules.Run(CheckIfProductNameExist(product.ProductName));
             //CheckCategory(product.CategoryId);
 
             if (result != null)
             {
                 return result;
             }
+
             _productDal.Add(product);
+
             return new SuccessResult(Messages.ProductAdded);
 
             //if (CheckIfProductCountOfCategoryCorrect(product.CategoryId).Success)
@@ -124,7 +126,7 @@ namespace Business.Concrete
         //[PerformanceAspect(5)]
         public IDataResult<List<Product>> GetAll()
         {
-            if (DateTime.Now.Hour == 22)
+            if (DateTime.Now.Hour == 11)
             {
                 return new ErrorDataResult<List<Product>>(Messages.MaintenanceTime);
             }
