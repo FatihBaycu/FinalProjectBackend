@@ -28,9 +28,10 @@ namespace Business.Concrete
             _productDal = productDal;
             _categoryService = categoryService;
         }
+
         // claim 
-        //[SecuredOperation("product.add,admin")]
-        [ValidationAspect(typeof(ProductValidator))]
+        [SecuredOperation("product.add,admin,moderator")]
+        //[ValidationAspect(typeof(ProductValidator))]
         [CacheRemoveAspect("IProductService.Get")]
         public IResult Add(Product product)
         {
@@ -160,7 +161,7 @@ namespace Business.Concrete
         {
 
             var result = _productDal.GetAll(p => p.CategoryId == categoryId).Count;
-            if (result >= 11)
+            if (result >= 111)
             {
                 return new ErrorResult(Messages.CheckIfProductCountOfCategoryCorrect);
             }
@@ -185,7 +186,7 @@ namespace Business.Concrete
         private IResult CheckIfCategoryLimitExceded()
         {
             var result = _categoryService.GetAll();
-            if (result.Data.Count > 5)
+            if (result.Data.Count > 100)
             {
                 return new ErrorResult(Messages.CategoryLimitExceded);
             }
